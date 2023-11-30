@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-----
+       Bootstrap
+       ----->
+    <link rel="stylesheet" href="../bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="../bootstrap-5.2.3-dist/css/bootstrap-utilities.css">
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.js"></script>
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.esm.js"></script>
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.esm.min.js"></script>
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.js"></script>
+    <script src="../bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+    <!-----
+       Styles 
+      ----->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Clock - Web App</title>
+</head>
+<body>
+    <!----- 
+      $ Mobile Nav
+      ----->
+
+  <i class="bi bi-list mobile-nav-toggle d-lg-none"></i>
+
+  <!----- 
+    $ Header 
+    ----->
+
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <!-- 
+      $ Nav 
+      ----->
+
+    <nav id="navbar" class="navbar nav-menu">
+      <ul>
+        <li><a href="#clock" class="nav-link scrollto active"><i class="bi bi-clock"></i><span>Clock</span></a></li>
+        <li><a href="#timer" class="nav-link scrollto"><i class="bi bi-hourglass"></i><span>Timer</span></a></li>
+        <li><a href="#stopwatch" class="nav-link scrollto"><i class="bi bi-stopwatch"></i><span>StopWatch</span></a></li>
+      </ul>
+    </nav>
+
+    <!----- 
+      $ End Nav 
+    ----->
+
+  </header>
+
+  <!----- 
+    $ End Header 
+  ----->
+
+<!----- 
+  $ Main 
+----->
+
+<main id="main">
+
+    <!----- 
+      $ Clock 
+      ----->
+
+    <section id="clock">
+      <div class="container d-flex align-items-center" data-aos="fade-up">
+             <div class="clock d-flex flex-column justify-content-center">
+               <div id="date" class="h3 fw-medium"></div>
+               <div id="time"> 
+                 <span class="h1 fw-bold" id="hours"></span>
+                 <span class="h1 fw-bold">:</span>
+                 <span class="h1 fw-bold" id="minutes"></span>
+                 <span class="h1 fw-bold">:</span>
+                 <span class="h1 fw-bold" id="seconds"></span>
+                 <span class="h4 fw-semibold " id="am-pm"></span>
+               </div>
+             </div>
+      </div>
+     </section>
+
+     <!----- 
+      $ Clock Ends 
+    ----->
+    
+    <!----- 
+      $ Timer 
+      ----->
+
+    <section id="timer" class="timer">
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+
+          <!-----
+            $ ShowTime  
+          ----->
+    
+          <div class="col-m-12 h1 fw-bold" id="timer-panel">
+            <span id="showtime">00:00:00</span>
+        </div>
+    
+        <!-----
+            $ ShowTime Ends
+          ----->
+    
+          <!----- 
+            $ Set Timer
+          ----->
+    
+          <div class="col-xs-12" id="timer-duration">
+              <h2 class="fw-medium">Set Timer</h2>
+              <button class="btn btn-outline-dark" id="addBtn"><i class="sbi bi-plus" style="font-size: 1.5rem;"></i></button>
+              <h3 id="timer-display">25</h3>
+              <button class="btn btn-outline-dark" id="subBtn"><i class="bi bi-dash" style="font-size: 1.5rem;"></i></i></button>
+          </div>
+
+          <!----- 
+            $ Set Timer Ends
+          ----->
+    
+          <!----- 
+            $ SPS Begins 
+            ----->
+    
+          <div class="col-xs-12" id="button-panel">
+              <button type="button" class="btn btn-outline-dark" id="start" onclick="start()"><i class="bi bi-power" style="font-size: 1.5rem;"></i></button>
+              <button type="button" class="btn btn-outline-dark" id="resume" onclick="resume()"><i class="bi bi-play-fill" style="font-size: 1.5rem;"></i></button>
+              <button type="button" class="btn btn-outline-dark" id="pause" onclick="pause()"><i class="bi bi-pause-fill" style="font-size: 1.5rem;"></i></button>
+              <button type="button" class="btn btn-outline-dark" id="reset" onclick="reset()"><i class="bi bi-arrow-repeat" style="font-size: 1.5rem;"></i></button>
+          </div>
+    
+          <!-----
+           $ SPS End  
+          ----->
+
+      </div>
+    
+          </div>
+      
+    </section>
+
+    <!----- 
+            $ Timer Ends
+          ----->
+
+    <!----- 
+      $ StopWatch 
+      ----->
+
+      <section id="stopwatch" class="stopwatch">
+        <div class="container" data-aos="fade-up">
+        
+          <!-----
+            $ WatchTime  
+          ----->
+
+          <div id="watchTime" class="h1 fw-bold">00:00:00.00</div>
+
+          <!-----
+            $ WatchTime Ends
+          ----->
+
+        <!----- 
+            $ SPS Begins 
+            ----->
+
+        <button id="startBtn" class="btn watchBtn btn-outline-dark startBtn"><i class="bi bi-play-fill"></i></button>
+        <button id="pauseBtn" class="btn watchBtn btn-outline-dark pauseBtn"><i class="bi bi-pause-fill"></i></button>
+        <button id="resetBtn" class="btn watchBtn btn-outline-dark resetBtn"><i class="bi bi-arrow-repeat"></i></button>
+
+        <!-----
+           $ SPS End  
+          ----->
+
+    </div>
+        </div>
+      </section>
+
+      <!----- 
+      $ StopWatch Ends
+      ----->
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <span class="text h6"> &copy; 2023 Created by Sai Naga Vignesh - CodeClause Internship</span>
+  </div>
+</footer>
+
+  <!-----
+    $ Script 
+  ----->
+
+    <script src="./js/index.js"></script>
+    <script src="./js/clock.js"></script>
+    <script src="./js/timer.js"></script>
+    <script src="./js/stopwatch.js"></script>
+
+    <!-----
+       Script Ends 
+      ----->
+</body>
+</html>
